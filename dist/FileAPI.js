@@ -1098,6 +1098,7 @@
 					, chunkSize: api.chunkSize
 					, chunkUploadRetry: api.chunkUploadRetry
 					, uploadRetry: api.uploadRetry
+					, method: 'POST'
 				}, options);
 
 
@@ -2979,7 +2980,7 @@
 					url += (url.indexOf('?') < 0 ? "?" : "&") + data.params.join("&");
 				}
 
-				xhr.open('POST', url, true);
+				xhr.open(options.method || 'POST', url, true);
 
 				if( api.withCredentials ){
 					xhr.withCredentials = "true";
